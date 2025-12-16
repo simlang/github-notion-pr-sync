@@ -126,7 +126,7 @@ function getPropertiesFromPr(pr) {
       select: { name: process.env.GITHUB_REPOSITORY.split("/")[1] },
     },
     Reviewers: {
-      multi_select: pr.requested_reviewers,
+      multi_select: pr.requested_reviewers.users,
     },
   };
 
