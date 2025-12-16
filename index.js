@@ -147,7 +147,7 @@ function getPropertiesFromPr(pr) {
       }),
     };
   } else {
-	  notionProperties["Reviewers"] = {};
+	  notionProperties["Reviewers"] = {multi_select: []};
   }
   return notionProperties;
 }
