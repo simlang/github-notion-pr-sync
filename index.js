@@ -147,6 +147,8 @@ function getPropertiesFromPr(pr) {
       }),
     };
   }
+  console.log(pr.requested_reviewers)
+  console.log(pr.requested_reviewers.users)
   return notionProperties;
 }
 
