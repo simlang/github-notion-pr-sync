@@ -155,12 +155,14 @@ function getPropertiesFromPr(pr) {
       }),
     };
   }
-  if (pr.requested_reviewers) {
-    notionProperties["Reviewers"] = pr.requested_reviewers.length > 0 ? {
+  if (pr.requested_reviewers && pr.requested_reviewers.length > 0) {
+    notionProperties["Reviewers"] = {
       multi_select: pr.requested_reviewers.map((r) => {
         return { name: r.login };
       }),
-    } : {};
+    };
+  } else {
+	  notionProperties["Reviewers"] = {};
   }
   return notionProperties;
 }
@@ -20954,6 +20956,7 @@ module.exports = require("zlib");;
 /******/ 	return __nccwpck_require__(2932);
 /******/ })()
 ;
+
 
 
 
