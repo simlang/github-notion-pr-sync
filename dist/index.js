@@ -155,9 +155,9 @@ function getPropertiesFromPr(pr) {
       }),
     };
   }
-  if (pr.requested_reviewers.users && pr.requested_reviewers.length > 0) {
+  if (pr.requested_reviewers.users && pr.requested_reviewers.users.length > 0) {
     notionProperties["Reviewers"] = {
-      multi_select: pr.requested_reviewers.map((r) => {
+      multi_select: pr.requested_reviewers.users.map((r) => {
         return { name: r.login };
       }),
     };
@@ -20954,4 +20954,5 @@ module.exports = require("zlib");;
 /******/ 	return __nccwpck_require__(2932);
 /******/ })()
 ;
+
 
