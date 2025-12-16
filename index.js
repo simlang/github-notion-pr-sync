@@ -140,12 +140,12 @@ function getPropertiesFromPr(pr) {
       }),
     };
   }
-  if (pr.requested_reviewers && pr.requested_reviewers.length > 0) {
-    notionProperties["Reviewers"] = {
+  if (pr.requested_reviewers) {
+    notionProperties["Reviewers"] = pr.requested_reviewers.length > 0 ? {
       multi_select: pr.requested_reviewers.map((r) => {
         return { name: r.login };
       }),
-    };
+    } : {};
   }
   return notionProperties;
 }
