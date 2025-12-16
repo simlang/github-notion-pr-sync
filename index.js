@@ -125,6 +125,9 @@ function getPropertiesFromPr(pr) {
     Repository: {
       select: { name: process.env.GITHUB_REPOSITORY.split("/")[1] },
     },
+    Reviewers: {
+      multi_select: pr.requested_reviewers,
+    },
   };
 
   if (pr.closed_at) {
@@ -137,13 +140,6 @@ function getPropertiesFromPr(pr) {
     notionProperties["Labels"] = {
       multi_select: pr.labels.map((l) => {
         return { name: l.name };
-      }),
-    };
-  }
-  if (pr.reviewers && pr.reviewers.length > 0) {
-    notionProperties["Reviewers"] = {
-      multi_select: pr.reviewers.map((r) => {
-        return { name: r.login };
       }),
     };
   }
