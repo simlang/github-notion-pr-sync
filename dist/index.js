@@ -148,7 +148,7 @@ function getPropertiesFromPr(pr) {
   if (pr.merged_at) {
     notionProperties["Merged at"] = { date: { start: pr.merged_at } };
   }
-  if (pr.labels && pr.labels.length > 0) {
+  if (pr.labels) {
     notionProperties["Labels"] = {
       multi_select: pr.labels.map((l) => {
         return { name: l.name };
@@ -20956,6 +20956,7 @@ module.exports = require("zlib");;
 /******/ 	return __nccwpck_require__(2932);
 /******/ })()
 ;
+
 
 
 
