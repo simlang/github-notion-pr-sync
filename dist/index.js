@@ -162,6 +162,8 @@ function getPropertiesFromPr(pr) {
       }),
     };
   }
+  console.log(pr.requested_reviewers)
+  console.log(pr.requested_reviewers.users)
   return notionProperties;
 }
 
@@ -20954,5 +20956,6 @@ module.exports = require("zlib");;
 /******/ 	return __nccwpck_require__(2932);
 /******/ })()
 ;
+
 
 
