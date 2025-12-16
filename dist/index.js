@@ -162,7 +162,7 @@ function getPropertiesFromPr(pr) {
       }),
     };
   } else {
-	  notionProperties["Reviewers"] = {};
+	  notionProperties["Reviewers"] = {multi_select: []};
   }
   return notionProperties;
 }
@@ -20956,6 +20956,7 @@ module.exports = require("zlib");;
 /******/ 	return __nccwpck_require__(2932);
 /******/ })()
 ;
+
 
 
 
